@@ -2,3 +2,4 @@ requests
 python-dotenv
 streamlit
 langchain
+langchain_openai
