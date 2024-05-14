@@ -16,7 +16,7 @@ def get_signals_status(status):
         'planskenario': 'scenario'
     }
     
-    url = "https://sucor.sahamology.id/signal"
+    url = st.secrets["signals_url"]
     payload = {
         'id': st.secrets["id"],
         'key': st.secrets["key"],
@@ -57,7 +57,7 @@ def get_signals_status(status):
 
 
 def get_trading_info(ticker):
-    url = "https://sucor.sahamology.id/arvita/artificial"
+    url = st.secrets["info_url"]
     payload = {
         'id': st.secrets["id"],
         'key': st.secrets["key"],
@@ -84,7 +84,7 @@ def get_trading_info(ticker):
     
 
 def get_invest_info(ticker):
-    url = "https://sucor.sahamology.id/arvita/artificial"
+    url = st.secrets["info_url"]
     payload = {
         'id': st.secrets["id"],
         'key': st.secrets["key"],
