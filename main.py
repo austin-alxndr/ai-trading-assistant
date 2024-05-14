@@ -15,7 +15,7 @@ def get_signals_status(status):
         'planskenario': 'scenario'
     }
     
-    url = "https://sucor.sahamology.id/signal"
+    url = os.getenv('SIGNALS_URL')
     payload = {
         'id': os.getenv('API_ID'),
         'key': os.getenv('API_KEY'),
@@ -56,7 +56,7 @@ def get_signals_status(status):
 
 
 def get_trading_info(ticker):
-    url = "https://sucor.sahamology.id/arvita/artificial"
+    url = os.getenv('INFO_URL')
     payload = {
         'id': os.getenv('API_ID'),
         'key': os.getenv('API_KEY'),
@@ -83,7 +83,7 @@ def get_trading_info(ticker):
     
 
 def get_invest_info(ticker):
-    url = "https://sucor.sahamology.id/arvita/artificial"
+    url = os.getenv('INFO_URL')
     payload = {
         'id': os.getenv('API_ID'),
         'key': os.getenv('API_KEY'),
