@@ -261,11 +261,9 @@ st.title('AI-Powered Stock Analysis Tool')
 
 # Display example prompts with a note
 st.write("To get you started, please either copy/paste the below prompts or follow the format structure for best results.")
-example_prompts = """
-- For status-based signal analysis (not company-specific), enter a status like 'fresh buy', 'fresh sell', 'positive', or 'negative'. Example: 'Show fresh buy signals.'
+example_prompts = """- For status-based signal analysis (not company-specific), enter a status like 'fresh buy', 'fresh sell', 'positive', or 'negative'. Example: 'Show fresh buy signals.'
 - For trading information about a specific company, enter the stock ticker. Example: 'Get trading information for BBRI.'
-- For investment information such as financial ratios or investment recommendations for a specific company, enter the stock ticker. Example: 'What are the EPS growth, Price to Earnings ratio, and Book Value Per Share for BBCA?'
-"""
+- For investment information such as financial ratios or investment recommendations for a specific company, enter the stock ticker. Example: 'What are the EPS growth, Price to Earnings ratio, and Book Value Per Share for BBCA?'"""
 st.text_area("Example Prompts:", example_prompts, height=150, key="example_prompts", disabled=True, help="Copy and paste one of these examples into the input box above or modify them to fit your specific query.")
 
 # Input for user queries
