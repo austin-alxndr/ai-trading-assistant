@@ -17,8 +17,8 @@ def get_signals_status(status):
     
     url = "https://sucor.sahamology.id/signal"
     payload = {
-        'id': '846765',
-        'key': 'SUCOR-z2m5d23a-r1h6-r3o3-gw0k-wetuibdjhkjah',
+        'id': os.getenv('API_ID'),
+        'key': os.getenv('API_KEY'),
         'short': 'volume',
         'status': status
     }
@@ -58,8 +58,8 @@ def get_signals_status(status):
 def get_trading_info(ticker):
     url = "https://sucor.sahamology.id/arvita/artificial"
     payload = {
-        'id': '846765',
-        'key': 'SUCOR-z2m5d23a-r1h6-r3o3-gw0k-wetuibdjhkjah',
+        'id': os.getenv('API_ID'),
+        'key': os.getenv('API_KEY'),
         'pesan': '#'+ticker  # Ensure this is the correct key for the ticker
     }
     headers = {}
@@ -85,8 +85,8 @@ def get_trading_info(ticker):
 def get_invest_info(ticker):
     url = "https://sucor.sahamology.id/arvita/artificial"
     payload = {
-        'id': '846765',
-        'key': 'SUCOR-z2m5d23a-r1h6-r3o3-gw0k-wetuibdjhkjah',
+        'id': os.getenv('API_ID'),
+        'key': os.getenv('API_KEY'),
         'pesan': 'invest #'+ticker  # Ensure this is the correct key for the ticker
     }
     headers = {}
@@ -255,7 +255,6 @@ import streamlit as st
 #         else:
 #             st.write("No response received.")
 
-import streamlit as st
 
 # Title of the application
 st.title('AI-Powered Stock Analysis Tool')
