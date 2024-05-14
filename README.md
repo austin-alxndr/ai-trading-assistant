@@ -16,7 +16,7 @@ This application provides a robust interface for accessing technical and fundame
 To run this application locally, follow these steps:
 
 1. Clone the repository:
-   git clone <https://github.com/austin-alxndr/spot-trading-assistant>
+   git clone <https://github.com/austin-alxndr/ai-trading-assistant>
 
 2. Install the required packages:
     pip install -r requirements.txt
