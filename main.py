@@ -1,6 +1,7 @@
 ################# Define custom functions w/in Python ################
 import os
 import requests
+import streamlit as st
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -17,8 +18,8 @@ def get_signals_status(status):
     
     url = "https://sucor.sahamology.id/signal"
     payload = {
-        'id': os.getenv('API_ID'),
-        'key': os.getenv('API_KEY'),
+        'id': st.secrets["id"],
+        'key': st.secrets["key"],
         'short': 'volume',
         'status': status
     }
@@ -58,8 +59,8 @@ def get_signals_status(status):
 def get_trading_info(ticker):
     url = "https://sucor.sahamology.id/arvita/artificial"
     payload = {
-        'id': os.getenv('API_ID'),
-        'key': os.getenv('API_KEY'),
+        'id': st.secrets["id"],
+        'key': st.secrets["key"],
         'pesan': '#'+ticker  # Ensure this is the correct key for the ticker
     }
     headers = {}
@@ -85,8 +86,8 @@ def get_trading_info(ticker):
 def get_invest_info(ticker):
     url = "https://sucor.sahamology.id/arvita/artificial"
     payload = {
-        'id': os.getenv('API_ID'),
-        'key': os.getenv('API_KEY'),
+        'id': st.secrets["id"],
+        'key': st.secrets["key"],
         'pesan': 'invest #'+ticker  # Ensure this is the correct key for the ticker
     }
     headers = {}
@@ -192,6 +193,7 @@ class InvestInfoTool(BaseTool):
 from langchain.agents import OpenAIFunctionsAgent, AgentExecutor
 from langchain_openai import ChatOpenAI
 
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 llm = ChatOpenAI(
     model='gpt-3.5-turbo-0613',
@@ -210,8 +212,6 @@ agent_executor = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools, ve
 #print(response)
 
 ##################### Streamlit Application ##########################
-
-import streamlit as st
 
 # # Title of the application
 # st.title('AI-Powered Stock Analysis Tool')
